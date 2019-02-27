@@ -1,0 +1,9 @@
+#!/bin/bash
+
+# Stop a service (POST /v2/applications/:appId:/stop-service)
+# Stop a service in the application with application id passed in with the url
+SERVICE_NAME="my-service"
+APPID="YOUR_APP_ID"
+curl --header "Content-Type:application/json" \
+	"$BALENA_SUPERVISOR_ADDRESS/v2/applications/$APPID/stop-service?apikey=$BALENA_SUPERVISOR_API_KEY" \
+	-d '{"serviceName": "my-service"}'
